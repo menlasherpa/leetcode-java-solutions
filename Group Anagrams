@@ -1,0 +1,26 @@
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        //List<List<String>> result = new LinkedList();
+
+        HashMap<String, List<String>> hm = new HashMap();
+
+        //sorting each strings and making it key
+          for (String st : strs) {
+             char[] data = st.toCharArray();
+             Arrays.sort(data);
+             String key = Arrays.toString(data);
+
+             if (hm.containsKey(key)) {
+                List<String> re = hm.get(key);
+                re.add(st);
+             } else {
+                List<String> temp = new LinkedList();
+                temp.add(st);
+                hm.put(key, temp);
+             }
+          }
+
+          return new LinkedList(hm.values());
+       
+    }
+}
