@@ -13,3 +13,22 @@ class Solution {
         }
     }
 }
+
+
+
+/* class solution {
+        public void duplicateZeros(int[] arr) {
+        int i = 0 , len = arr.length;
+        
+       while(i < len-1){
+            if(arr[i] == 0){
+                for(int j = len - 2 ; j > i ; j--){
+                    arr[j+1] = arr[j];
+                }
+                arr[i+1] = 0;
+                i++;
+            }
+           i++;
+        }
+    }
+} */
