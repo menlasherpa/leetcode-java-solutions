@@ -1,0 +1,14 @@
+class Solution {
+    public int[] countBits(int n) {
+        int[] array =new int[n+1];
+        array[0]=0;
+        for(int i=1;i<=n;i++){
+           if(i%2!=0) array[i]= array[i-1]+1;
+           else array[i]= array[i/2];
+        }
+        return array;
+    }
+}
+
+// if odd --> add previous + 1
+// if even --> half it and it's equal
