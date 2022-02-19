@@ -8,7 +8,7 @@ class Solution {
         
         return nums.length; // keep trget next to the last element so return it's index.
     }
-}
+} // Time Cmplexity : o(n) Space Complexity: o(1)
 
 // Binary search
 class Solution {
@@ -28,4 +28,4 @@ class Solution {
         
         return end + 1;
     }
-}
+} // Time Complexity : o(nlogn) Space Complexity: o(1)
