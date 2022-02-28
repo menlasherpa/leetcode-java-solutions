@@ -1,0 +1,36 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode curr = head;
+        Stack<Integer> stack = new Stack();
+        boolean isPalin = true;
+        
+        // pushing all the node values to the stack
+        while(curr != null) {
+            stack.push(curr.val);
+            curr = curr.next;
+        }
+        
+        // checking each stack values to the head values. It's just like checking original list to the the reversed list
+        while(head != null) {
+            int n = stack.pop();
+            if(n == head.val) isPalin = true;
+            else {
+                isPalin = false;
+                break;
+            }
+            head = head.next;
+        }
+        
+        return isPalin;
+    }
+}
