@@ -34,3 +34,27 @@ class Solution {
         return isPalin;
     }
 }
+
+// Another method using ArrayList
+class Solution{
+    public boolean isPalindrome(ListNode head) {
+        List<Integers> arrayList = new ArrayList<>();
+        ListNode curr = head;
+        
+        while(curr != null) {
+            arrayList.add(curr.val);
+            curr = curr.next;
+        }
+        
+        int start = 0;
+        int end = arrayList.size() - 1;
+        
+        while(start < end) {
+            // using ! since it's a list of Intgers not int
+            if(!arrayList.get(start).equals(arrayList.get(end))) return false; // the first and last number must be same else it's not palindrome
+            start++;
+            end--;
+        }
+        
+    }
+}
