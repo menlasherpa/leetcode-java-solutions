@@ -1,0 +1,22 @@
+class Solution {
+    public int trap(int[] height) {
+    
+    //Two pointer method
+        int low = 0, high = height.length - 1, leftMax = 0, rightMax = 0, trapped = 0;
+        
+        while(low <= high) {
+            if(height[low] < height[high]) {
+                if(height[low] > leftMax) leftMax = height[low];
+                else trapped += leftMax - height[low];
+                low++;
+            } else {
+                if(height[high] > rightMax) rightMax = height[high];
+                else trapped += rightMax - height[high];
+                high--;
+            }
+        }
+        
+        return trapped;
+        
+    }
+}
